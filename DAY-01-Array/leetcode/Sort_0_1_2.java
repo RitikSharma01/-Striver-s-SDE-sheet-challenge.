@@ -1,37 +1,26 @@
-import java.util.* ;
-import java.io.*; 
-
-public class Solution {
-public static long maxSubarraySum(int[] arr, int n) {
-       long max = Integer.MIN_VALUE;
-       long cur = 0;
-       int i = 0;
-       for(i = 0 ; i<n; i++){
-           cur = cur +  arr[i];
-           max = Math.max(cur,max);
-
-           if(cur<0){
-
-               cur = 0;
-
-           }
-
-         
-
-           if(n == 15){
-
-               max = 0;
-
-           }
-
-           
-
-       }
-
-        return max;
-
-}
-
- 
-
+class Solution {
+        private static final int RED=0; 
+        private static final int WHITE=1; 
+        private static final int BLUE=2; 
+        
+        public void sortColors(int[]nums)
+        {
+            int redEnd=-1;
+            int whiteEnd=-1;
+            
+            for (int i=0;i<nums.length;i++)
+            {
+                int v =nums[i];
+                nums[i]=BLUE;
+                if(v==RED)
+                {
+                    nums[++whiteEnd]=WHITE;
+                    nums[++redEnd]=RED;
+                }
+                else if(v==WHITE)
+                {
+                    nums[++whiteEnd]=WHITE;
+                }
+            }
+    }
 }
