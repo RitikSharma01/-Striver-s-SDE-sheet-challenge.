@@ -22,7 +22,7 @@ public class Solution {
             for(String t:m)
             {
                 temp.append(t);
-            }
+             }
             ans.add(temp.toString());
             return;
         }
